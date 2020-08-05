@@ -5,21 +5,11 @@ permalink: /docs/history/
 excerpt: "Change log of enhancements and bug fixes made to the theme."
 sidebar:
   nav: docs
-last_modified_at: 2020-08-04T12:59:39-04:00
+last_modified_at: 2020-07-24T15:55:22-04:00
 toc: false
 ---
 
 ## Unreleased
-
-- Fix `entries_layout: grid` in various layouts. [#2639](https://github.com/mmistakes/minimal-mistakes/issues/2639)
-
-## [4.20.1](https://github.com/mmistakes/minimal-mistakes/releases/tag/4.20.1)
-
-### Bug Fixes
-
-- Fix grid `entries_layout` in home.html. [#2616](https://github.com/mmistakes/minimal-mistakes/pull/2616)
-
-## [4.20.0](https://github.com/mmistakes/minimal-mistakes/releases/tag/4.20.0)
 
 ### Bug Fixes
 
@@ -30,8 +20,6 @@ toc: false
 
 ### Enhancements
 
-- Add an optional date alongside the reading time. To enable set `show_date: true` similar to how reading time is. [#2526](https://github.com/mmistakes/minimal-mistakes/pull/2526)
-- Remove hidden posts from posts.html layout. [#2625](https://github.com/mmistakes/minimal-mistakes/pull/2625)
 - Add entry layout configuration for `list` (default) or `grid` views on `layout: home`. [#2616](https://github.com/mmistakes/minimal-mistakes/pull/2616)
 - Add missing Chinese translations. [#2576](https://github.com/mmistakes/minimal-mistakes/pull/2576)
 - Improve Chinese translations. [#2626](https://github.com/mmistakes/minimal-mistakes/pull/2626)
@@ -41,7 +29,6 @@ toc: false
 - Ignore teaser headline in table of contents when including posts list in another page. [#2558](https://github.com/mmistakes/minimal-mistakes/pull/2558)
 - Replace Font Awesome Kits with CSS from jsDelivr CDN. [#2583](https://github.com/mmistakes/minimal-mistakes/pull/2583)
 - Add `danmaku` option to Bilibili video provider and add corresponding documentation/ [#2599](https://github.com/mmistakes/minimal-mistakes/pull/2599)
-- Update documentation about loading l10n data file from the theme-gem. [#2621](https://github.com/mmistakes/minimal-mistakes/issues/2621) [#2624](https://github.com/mmistakes/minimal-mistakes/pull/2624)
 
 ## [4.19.3](https://github.com/mmistakes/minimal-mistakes/releases/tag/4.19.3)
 
