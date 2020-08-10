@@ -1,6 +1,6 @@
 ---
 title: "블로그 포스팅"
-permalink: /setting/
+permalink: /post/
 layout: single
 ---
 
