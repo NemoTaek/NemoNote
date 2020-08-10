@@ -4,8 +4,8 @@ main:
     url: /about/
   - title: "Setting"
     url: /setting/
-  - title: "Post"
-    url: /post/
+  - title: "Categories"
+    url: /categories/
   # - title: "Sample Posts"
   #   url: /year-archive/
   # - title: "Sample Collections"
