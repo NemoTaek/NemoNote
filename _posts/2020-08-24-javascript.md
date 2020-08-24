@@ -10,6 +10,8 @@ Javascript는 HTML에 연결되어 기능을 넣어주는 스크립트 언어이
 
 - javaxcript를 적용하는 방법  
   + HTML 내부에 작성: `<style>`태그를 삽입하여 적용  
+  <br>  
+  
 ```
 <!DOCTYPE html>
 <html>
