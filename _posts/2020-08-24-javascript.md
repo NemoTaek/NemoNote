@@ -33,6 +33,8 @@ Javascript는 HTML에 연결되어 기능을 넣어주는 스크립트 언어이
 javascript 적용을 head에 삽입하는 방법이 있고, body가 끝나기 전에 삽입하는 방법이 있다.  
 
 - head에 삽입하는 방법  
+<br>  
+
 ```
 <!DOCTYPE html>
 <html>
@@ -52,6 +54,8 @@ javascript 적용을 head에 삽입하는 방법이 있고, body가 끝나기 �
   + 문서의 DOM(Document Object Model) 구조가 필요한 스크립트의 경우 document.onload와 같은 로드 이벤트가 추가되어야 에러없이 작동된다.  
 
 - body가 끝나기 전에 삽입하는 방법  
+<br>  
+
 ```
 <!DOCTYPE html>
 <html>
