@@ -12,8 +12,7 @@ tags:
 ---
 
 - javascript에서 객체를 생성하는 방법(Prototype Chain)  
-
-  1. Object Literal
+  1. Object Literal  
     일반적으로 객체를 만들듯이 중괄호({})로 만드는 방법이다. 객체가 정의되는 순간 객체는 프로토타입으로 Object.prototype을 가진다. 따라서 Object.prototype에 정의된 메소드들을 사용할 수 있다. 그래서 MDN에 검색하는 메소드를 보면 Object.prototype.메소드명 이라고 검색되는 것이다.  
     예를들어 `let object = {};` 라는 객체를 선언한다는 것은 `let object = new Object();` 라는 생성자 명령으로 이루어진다고 볼 수 있다.  
 <br>
@@ -84,7 +83,7 @@ tags:
 
   마지막으로 call 메소드를 통하여 자식 함수가 실행될 때 부모 함수가 실행되고 부모의 this를 자식의 this 객체로 할당한다.  
 
-<br><br>
+<br>
 - 그런데 ES2015에서는 이러한 프로토타입 상속의 과정을 더 간단하게 코딩하기 위한 방법으로 **Class**가 도입되었다. 위의 예제와 동일한 Class 구문은 다음과 같다.  
 
         Class Person{
