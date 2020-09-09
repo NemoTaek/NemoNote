@@ -1,8 +1,5 @@
 ---
 title: "Inheritance(상속)"
-categories:
-  - prototype chain
-  - prototype inheritance
 tags:
   - prototype chain
   - 객체
