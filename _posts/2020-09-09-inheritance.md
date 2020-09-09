@@ -85,25 +85,25 @@ tags:
   마지막으로 call 메소드를 통하여 자식 함수가 실행될 때 부모 함수가 실행되고 부모의 this를 자식의 this 객체로 할당한다.  
 
 <br><br>
-그런데 ES2015에서는 이러한 프로토타입 상속의 과정을 더 간단하게 코딩하기 위한 방법으로 **Class**가 도입되었다. 위의 예제와 동일한 Class 구문은 다음과 같다.  
+- 그런데 ES2015에서는 이러한 프로토타입 상속의 과정을 더 간단하게 코딩하기 위한 방법으로 **Class**가 도입되었다. 위의 예제와 동일한 Class 구문은 다음과 같다.  
 
-      Class Person{
-        constructor(name, age){
-          this.name = name;
-          this.age = age;
+        Class Person{
+          constructor(name, age){
+            this.name = name;
+            this.age = age;
+          }
+
+          nextYear(){
+            this.age++;
+          }
         }
 
-        nextYear(){
-          this.age++;
+        class Intern extends Person{
+          constructor(name, age){
+            super(name, age);
+            this.isIntern = true;
+          }
         }
-      }
 
-      class Intern extends Person{
-        constructor(name, age){
-          super(name, age);
-          this.isIntern = true;
-        }
-      }
-
-객체의 생성자를 생성하는 방법과 상속하는 방법이 매우 간단해진 것을 볼 수 있다.  
-생성자임을 강조하기 위해 **constructor객체** 아래에 함수식으로 작성하면 되고, 자식객체가 부모객체를 상속받는다는 것을 정의할 때는 **extends와 super 키워드**를 사용하면 된다.  
+  객체의 생성자를 생성하는 방법과 상속하는 방법이 매우 간단해진 것을 볼 수 있다.  
+  생성자임을 강조하기 위해 **constructor객체** 아래에 함수식으로 작성하면 되고, 자식객체가 부모객체를 상속받는다는 것을 정의할 때는 **extends와 super 키워드**를 사용하면 된다.  
