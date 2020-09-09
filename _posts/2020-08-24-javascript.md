@@ -1,7 +1,5 @@
 ---
 title: "Javascript 개요"
-categories:
-  - javascript
 tags:
   - javascript
 ---

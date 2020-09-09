@@ -1,8 +1,5 @@
 ---
 title: "recursion 과제 작성 및 4주차 후기"
-categories:
-  - 재귀
-  - 부트캠프
 tags:
   - 재귀
   - 부트캠프

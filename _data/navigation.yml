@@ -4,8 +4,8 @@ main:
     url: /about/
   - title: "Setting"
     url: /setting/
-  - title: "Categories"
-    url: /categories/
+  # - title: "Categories"
+  #   url: /categories/
   - title: "Tags"
     url: /tags/
   # - title: "Sample Collections"

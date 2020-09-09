@@ -1,8 +1,5 @@
 ---
 title: "md파일 미리보기"
-categories:
-  - md
-  - markdown
 tags:
   - md
   - markdown
