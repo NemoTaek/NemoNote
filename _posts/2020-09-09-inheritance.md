@@ -41,6 +41,7 @@ tags:
           let info = Object.create(personPrototype);
           info.name = 'NemoTaek';
           info.age = 26;
+          info.salary = 300;
         
       `Object.create` 메소드는 인자로 들어온 객체를 프로토타입으로 하는 새로운 객체를 생성한다.  
       예시에서 personPrototype이라는 객체를 Object.create의 인자로 넣었으므로 info의 프로토타입 객체는 personPrototype이 된다.  
@@ -48,55 +49,63 @@ tags:
 
 - Prototype Inheritance  
 
-        function Person(name, age){
+        function Person(name, age, salary){
           this.name = name;
           this.age = age;
+          this.salary = salary;
         }
 
         Person.prototype.nextYear = function(){
           this.age++;
+          this.salary += 30;
         }
 
   그리고 인턴의 생성자 함수를 만들어 보겠다.  
 
-        function Intern(name, age){
+        function Intern(name, age, salary){
           this.isIntern = true;
         }
 
   사원과 인턴을 구분하기 위한 isIntern 속성을 추가하였다. 다른 속성 및 메소드는 Person의 것을 가져올 것이다.  
   이제 프로토타입 상속을 해보자.  
 
-        function Intern(name, age){
-          Person.call(this, name, age);
+        function Intern(name, age, salary){
+          Person.call(this, name, age, salary);
           this.isIntern = true;
         }
 
         Intern.prototype = Object.create(Person.prototype);
         Intern.prototype.constructor = Intern;
+        
+        Intern.prototype.internNextYear = function(){
+          Person.prototype.nextYear.call(this);
+          this.salary += 10;
+        }
 
   Object.create 메소드를 사용하여 부모 클래스의 프로토타입을 프로토타입으로 하는 객체를 생성하고, 자식 프로토타입에 할당한다.  
   이 과정을 통해 생성된 객체도 프로토타입 체인을 통해 부모 클래스의 메소드에 접근할 수 있게 된다.  
-  그리고 Object.create 메소드를 사용하여 할단된 객체의 프로토타입에는 생성자가 사라지게 된다. 따라서 프로토타입에 있어야 하는 생성자 속성을 할당한다.  
-
-  마지막으로 call 메소드를 통하여 자식 함수가 실행될 때 부모 함수가 실행되고 부모의 this를 자식의 this 객체로 할당한다.  
+  그리고 Object.create 메소드를 사용하여 할당된 객체의 프로토타입에는 생성자가 사라지게 된다. 따라서 프로토타입에 있어야 하는 생성자 속성을 할당한다.  
+  마지막으로 call 메소드를 통하여 자식 함수나 메소드가 실행될 때 부모 함수가 실행되고 부모의 this를 자식의 this 객체로 할당한다.  
 
 <br>
 - 그런데 ES2015에서는 이러한 프로토타입 상속의 과정을 더 간단하게 코딩하기 위한 방법으로 **Class**가 도입되었다. 위의 예제와 동일한 Class 구문은 다음과 같다.  
 
         Class Person{
-          constructor(name, age){
+          constructor(name, age, salary){
             this.name = name;
             this.age = age;
+            this.salary = salary;
           }
 
           nextYear(){
             this.age++;
+            this.salary += 30;
           }
         }
 
         class Intern extends Person{
-          constructor(name, age){
-            super(name, age);
+          constructor(name, age, salary){
+            super(name, age, salary);
             this.isIntern = true;
           }
         }
