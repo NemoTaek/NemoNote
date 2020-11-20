@@ -41,7 +41,6 @@ tags:
       <li>upstream에서는 PR 내용을 보고 Merge할지 안할지 결정한다.  
       <li>Merge가 되었다면 해당 내용까지는 confirm이 되었다는 의미로 받아들이고 local의 dev에 pull 하여 현재 내용을 받아온다.  
       <li>중간중간에 백업용으로 dev를 origin에 push하여 저장한다.  
-    </ol>
   
 <br>
 다음 글에서는 기능을 개발하면서 있었던 이슈들을 작성할 것이다.  
