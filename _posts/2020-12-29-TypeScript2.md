@@ -193,8 +193,90 @@ tags:
       let strLength: number = (<string>someValue).length;
       ```
 <br>
-    someValue가 unknown 타입이지만, string으로 해석하고 길이를 반환한다.
-    그리고 만약 JSX에서 이 type assertions를 사용한다면 as-syntax만 허용된다.
+  someValue가 unknown 타입이지만, string으로 해석하고 길이를 반환한다.  
+  그리고 만약 JSX에서 이 type assertions를 사용한다면 as-syntax만 허용된다.  
+  
+- Type Guard (타입 가드): 타입을 매번 보장하기 위해서 type assertion을 여러번 사용하게 되는 경우가 있다. 이 때, type guard를 제공하면 특정 범위 내에서 타입을 보장 할 수 있게 된다.  
+
+  ```
+  function someFunc(val: string | number, isNumber: boolean) {
+    if (isNumber) {
+      (val as number).toFixed(2);
+      isNaN(val as number);
+    } else {
+      (val as string).split('');
+      (val as string).toUpperCase();
+      (val as string).length;
+    }
+  }
+  ```
+  
+  이처럼 매번 `val as string`을 계속 쓰면 코드의 가독성과 유지보수 면에서 안좋아 질 수 있다.  
+  그래서 앞에 `val(변수) is number(타입)`을 작성함으로서 type assertion을 피할 수 있게 된다.  
+  
+  ```
+  // 타입 가드
+  function isNumber(val: string | number): val is number {
+    return typeof val === 'number';
+  }
+  
+  function someFunc(val: string | number, isNumber: boolean) {
+    if (isNumber) {
+      (val as number).toFixed(2);
+      isNaN(val as number);
+    } else {
+      (val as string).split('');
+      (val as string).toUpperCase();
+      (val as string).length;
+    }
+  }
+  ```
+  
+  하지만 위대하시지만 게으른 개발자분들 께서는 이것도 귀찮다고 하셔서 더 간단하게 만들어주셨습니다.  
+  `typeof`, `in`, `instanceof` 연산자를 사용하면 type guard가 가능하게 됩니다.  
+  
+  ```
+  // typeof를 사용할 때는 number, string, boolean, symbol 타입만 가능하다.
+  function someFuncTypeOf(val: string | number) {
+    if (typeof val === 'number') {
+      (val as number).toFixed(2);
+      isNaN(val as number);
+    } else {
+      (val as string).split('');
+      (val as string).toUpperCase();
+      (val as string).length;
+    }
+  }
+  ```
+  ```
+  // in을 사용할 때는 any 타입만 가능하다.
+  function someFuncIn(val: any) {
+    if ('toFixed' in val) {
+      (val as number).toFixed(2);
+      isNaN(val as number);
+    } else {
+      (val as string).split('');
+      (val as string).toUpperCase();
+      (val as string).length;
+    }
+  }
+  ```
+  ```
+  class Cat {
+    meow() {}
+  }
+  class Dog {
+    woof() {}
+  }
+  function sounds(ani: Cat | Dog) {
+    if (ani instanceof Cat) {
+      ani.meow();
+    } else {
+      ani.woof();
+    }
+  }
+  ```
+  
   
 ----------------------------------------------------------------
 
