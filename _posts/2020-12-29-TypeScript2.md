@@ -21,7 +21,7 @@ tags:
   let octal: number = 0o744;
   let big: bigint = 100n;
   ```
-  
+  <br>
 - String: 문자열이다.  
   `let color: string = "blue"`
   
@@ -33,6 +33,7 @@ tags:
     - 그래서 배열의 generic type을 사용한다는 의미로 Array<>를 작성하고, 그 안에 타입을 적어 사용한다.  
     - `let list: Array<number> = [1, 2, 3];`  
     
+  <br>
 - Tuple: 알고 있는 타입의 고정된 수의 요소를 가진 배열로 표현한다. 그리고 튜플 안의 타입이 모두 같을 필요는 없다.  
 
   ```
@@ -47,7 +48,7 @@ tags:
   Type 'number' is not assignable to type 'string'.
   Type 'string' is not assignable to type 'number'.
   ```
-  
+  <br>
 - Enum: 흔히 열거형이라고 한다. 값들을 한 묶음으로 묶고 이름을 지정하여 표현한다. default 값은 0이며, 값은 차례대로 1씩 증가한다.  
 
   ```
@@ -123,9 +124,10 @@ tags:
   하지만 이미 어떤 타입으로 지정된 변수에 unknown 타입의 변수를 할당하면 오류를 뱉어낸다.  
   ```
   let notSure: unknown;
-  let aNumber: number = notSure; // Type 'unknown' is not assignable to type 'number'
+  let aNumber: number = notSure;
+  // Type 'unknown' is not assignable to type 'number'
   ```
-  
+  <br>
 - any: unknown처럼 타입을 모를 시 사용한다.  
   unknown과의 차이점은 위처럼 타입이 지정된 변수에 any 타입의 변수를 할당해도 오류를 뱉지 않는다.(메타몽같은걸..?)  
   
@@ -133,7 +135,7 @@ tags:
   let notSure: any;
   let aNumber: number = notSure; // OK
   ```
-  
+  <br>
 - void: any 타입의 반대 개념이다. 보통은 값을 리턴하지 않는 함수의 타입으로 사용된다.  
 
   ```
@@ -141,7 +143,7 @@ tags:
     console.log("This is my warning message");
   }
   ```
-
+<br>
 - null, undefined: 이것도 익히 알고 있는 null과 undefined이다.  
 
 - never: void와 약간 비슷한 개념인데, 절대로 일어날 수 없는 값에 대한 타입이다.  
@@ -152,7 +154,7 @@ tags:
     throw new Error(message);
   }
   ```
-  
+  <br>
 - object: number, string, boolean, bigint, symbol, null, undefined 와는 다르게 원시타입이 아닌 객체 타입이다.  
 
 - symbol: ESE6에서 새롭게 추가된 7번째 타입으로 변경 불가능한 원시타입이다.  
@@ -172,25 +174,25 @@ tags:
   let sym2 = Symbol("key");
   sym1 === sym2; // false
   ```
-  
+  <br>
 - type assertions: 타입 단언이라고도 하며, 컴파일러에게 "나만 믿어, 내가 알아서 할게" 라고 하는것 처럼 알아서 타입을 지정해주는 것이다. 다른 언어의 타입 변환과 비슷하지만, 특별한 검사나 데이터 재설정같은 것을 하지 않는다. 런타임에 영향을 미치지 않고 컴파일러에서만 사용된다.  
 
   사용 방법에는 2가지가 있다.  
   
   1. as-syntax  
   
-    ```
-    let someValue: unknown = "this is a string";
-    let strLength: number = (someValue as string).length;
-    ```
+      ```
+      let someValue: unknown = "this is a string";
+      let strLength: number = (someValue as string).length;
+      ```
     
   2. angle-bracket ( <> )  
   
-    ```
-    let someValue: unknown = "this is a string";
-    let strLength: number = (<string>someValue).length;
-    ```
-
+      ```
+      let someValue: unknown = "this is a string";
+      let strLength: number = (<string>someValue).length;
+      ```
+<br>
     someValue가 unknown 타입이지만, string으로 해석하고 길이를 반환한다.
     그리고 만약 JSX에서 이 type assertions를 사용한다면 as-syntax만 허용된다.
   
