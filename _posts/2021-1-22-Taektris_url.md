@@ -7,7 +7,7 @@ tags:
   - Taektris
 ---
 
-[Taektris](bit.ly/2MaUgW6)  
+[Taektris](http://bit.ly/2MaUgW6)  
 링크가 싫으면 url도 남겨놓겠다.  
 
 # **bit.ly/2MaUgW6**  
