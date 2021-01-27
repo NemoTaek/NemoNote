@@ -7,7 +7,7 @@ tags:
   - Taektris
 ---
 
-[Taektris](http://bit.ly/2MaUgW6)  
+[Taektris](http://taektris.s3-website.ap-northeast-2.amazonaws.com/)  
 링크가 싫으면 url도 남겨놓겠다.  
 
 # **bit.ly/2MaUgW6**  
